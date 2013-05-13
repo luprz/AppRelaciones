@@ -14,6 +14,6 @@ $this->menu=array(
 
 <?php echo $this->renderPartial('_ver', array('model'=>$model)); ?>	
 <hr>
-<?php echo $this->renderPartial('_estudios', array('model'=>$model)); ?>
+<?php $this->widget('ext.appWidget.stds', array('model'=>$model)); ?>
 <hr>
-<?php echo $this->renderPartial('_experiencia', array('model'=>$model)); ?>
+<?php $this->widget('ext.appWidget.exprc', array('model'=>$model)); ?>
