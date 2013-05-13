@@ -42,11 +42,15 @@ class Usuarios extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('ciudad_id, nombres, identificacion, email, genero', 'required'),
-			array('estado', 'numerical', 'integerOnly'=>true),
-			array('ciudad_id, identificacion', 'length', 'max'=>100),
+			array('ciudad_id, nombres, identificacion, email, genero', 'required', 'message'=>'{attribute} no puede estar vacio'),
+			//array('identificacion', 'numerical', 'integerOnly'=>true, 'max'=>99999999, 'min'=>0,'tooBig'=>'Ha sobre pasado en numero de caracteres', 'tooSmall'=>'Hacen falta caracteres'),
+			array('identificacion', 'numerical', 'integerOnly'=>true),
+			array('identificacion','unique','attributeName'=>'identificacion','className'=>'Usuarios','allowEmpty'=>false, 'message'=>'La cedula {value} ya existe en la base de datos.'),
+			array('identificacion', 'length', 'max'=>9, 'min'=>0),
+			array('ciudad_id', 'length', 'max'=>100),
 			array('nombres, email', 'length', 'max'=>255),
 			array('genero', 'length', 'max'=>1),
+			array('email', 'email'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, ciudad_id, nombres, identificacion, email, estado, genero', 'safe', 'on'=>'search'),

@@ -27,8 +27,8 @@ $this->menu=array(
 	<th>Estudios</th>
 	<th>Estado</th>
 	<th>Ver</th>
-	<th>Editar</th>
-	<th>Borrar</th>
+	<!--<th>Editar</th>
+	<th>Borrar</th>-->
 	</tr>
 	<?php foreach($dataProvider as $u){ ?>
 	<tr id='datos'>
@@ -44,8 +44,8 @@ $this->menu=array(
 		echo "Inactivo";
 	} ?></td>	
 	<td><div class='btn'><?php echo CHtml::link('Ver',array('ver','id'=>$u->id));?></div></td>
-	<td><div class='btn'><?php echo CHtml::link('Editar',array('update','id'=>$u->id));?></div></td>
-	<td><div class='btn'><?php echo CHtml::link('Borrar',array('delete','id'=>$u->id),array('confirm'=>'¿Seguro desea eliminar este usuario?'));?></div></td>
+	<!--<td><div class='btn'><?php echo CHtml::link('Editar',array('update','id'=>$u->id));?></div></td>
+	<td><div class='btn'><?php echo CHtml::link('Borrar',array('delete','id'=>$u->id),array('confirm'=>'¿Seguro desea eliminar este usuario?'));?></div></td>-->
 	</tr>
 	<?php } ?>
 
