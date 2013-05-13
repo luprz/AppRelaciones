@@ -15,4 +15,5 @@ class GAlert extends CWidget
 	
 	}
 	*/
+}
 ?>
